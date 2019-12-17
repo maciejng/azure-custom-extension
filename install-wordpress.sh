@@ -1,4 +1,8 @@
 #!/bin/bash
+sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm 
+sudo yum -y install epel-release yum-utils
+sudo yum-config-manager --disable remi-php54
+sudo yum-config-manager --enable remi-php73
 yum install php php-mysql -y
 cd /var/www/html
 wget https://wordpress.org/latest.tar.gz
