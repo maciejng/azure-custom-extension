@@ -12,4 +12,4 @@ rm -rf wordpress
 rm -rf *.tar.gz
 chmod -R 755 wp-content
 chown -R apache:apache wp-content
-service httpd reload
+service httpd restart
