@@ -13,7 +13,7 @@ rm -rf *.tar.gz
 chmod -R 755 wp-content
 chown -R apache:apache wp-content
 cp wp-config-sample.php wp-config.php
-sed -i 's/database_name_here/$1/g' wp-config.php
-sed -i 's/username_here/$2/g' wp-config.php
-sed -i 's/password_here/$3/g' wp-config.php
+sed -i "s/database_name_here/$1/g" wp-config.php
+sed -i "s/username_here/$2/g" wp-config.php
+sed -i "s/password_here/$3/g" wp-config.php
 service httpd restart
