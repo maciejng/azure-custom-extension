@@ -11,9 +11,13 @@ cp -r wordpress/* /var/www/html/
 rm -rf wordpress
 rm -rf *.tar.gz
 chmod -R 755 wp-content
-chown -R apache:apache wp-content
+chown -R apache:apache * -R
 cp wp-config-sample.php wp-config.php
 sed -i "s/database_name_here/$1/g" wp-config.php
 sed -i "s/username_here/$2/g" wp-config.php
 sed -i "s/password_here/$3/g" wp-config.php
+sed -i "s/password_here/$3/g" wp-config.php
+sed -i "s/localhost/10.0.1.4/g" wp-config.php
+sudo setsebool -P httpd_can_network_connect_db 1
+sudo setsebool -P httpd_can_network_connect 1
 service httpd restart
