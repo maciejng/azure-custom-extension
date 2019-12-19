@@ -4,7 +4,7 @@ yum update -y
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 sysctl -p
-yum -y install MariaDB-server MariaDB-client  
+yum -y install mariadb-server  
 systemctl start mariadb
 systemctl enable mariadb
 mysqladmin -u root password $1
