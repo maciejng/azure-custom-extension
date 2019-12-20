@@ -1,5 +1,5 @@
 #!/bin/bash
-mysql -u root <<-EOF
+mysql -u root -p$4 <<-EOF
 CREATE DATABASE $1;
 CREATE USER '$2'@'localhost' IDENTIFIED BY '$3';
 CREATE USER '$2'@'%' IDENTIFIED BY '$3';
