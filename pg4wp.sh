@@ -1,7 +1,6 @@
 yum install git php-pgsql -y
-cd wp-content // go to wp-content
 git clone https://github.com/kevinoid/postgresql-for-wordpress.git
-mv postgresql-for-wordpress/pg4wp Pg4wp
+mv postgresql-for-wordpress/pg4wp /var/www/html/wp-content/Pg4wp
 rm -rf postgresql-for-wordpress
-cp Pg4wp/db.php db.php
+cp /var/www/html/wp-content/Pg4wp/db.php /var/www/html/wp-content/db.php
 service httpd restart
